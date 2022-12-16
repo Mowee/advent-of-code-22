@@ -13,7 +13,7 @@ class Day4 : Day<Int>() {
     }
 
     private fun countPairsWithinRangesWhere(condition: (previous: IntRange, current: IntRange) -> Boolean): Int {
-        return input.lines().map { pair ->
+        return input.trim().lines().map { pair ->
             pair.split(",").map { range ->
                 val split = range.split("-")
                 IntRange(split.first().toInt(), split.last().toInt())

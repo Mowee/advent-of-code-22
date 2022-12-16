@@ -5,7 +5,7 @@ class Day1 : Day<Int>() {
     override val day = 1
 
     fun getTotals(): List<Int> {
-        return input.split("\n\n").map { group ->
+        return input.trim().split("\n\n").map { group ->
             group.split("\n").sumOf { it.toInt() }
         }
     }

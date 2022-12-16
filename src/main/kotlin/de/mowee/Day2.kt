@@ -47,7 +47,7 @@ class Day2 : Day<Int>() {
         get() = 2
 
     override fun partOne(): Int {
-        return input.lines().sumOf {
+        return input.trim().lines().sumOf {
             val strategyGuide = it.split(" ")
             val opponentsMove = getOpponentsMove(strategyGuide.first())
             val myMove = mapStrategyGuideToMyMove(strategyGuide.last())
@@ -57,7 +57,7 @@ class Day2 : Day<Int>() {
     }
 
     override fun partTwo(): Int {
-        return input.lines().sumOf {
+        return input.trim().lines().sumOf {
             val strategyGuide = it.split(" ")
             val opponentsMove = getOpponentsMove(strategyGuide.first())
             val myMove = mapStrategyGuideToRoundEnd(strategyGuide.last(), opponentsMove)
