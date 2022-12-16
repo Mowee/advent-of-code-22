@@ -1,6 +1,6 @@
 package de.mowee
 
-class Day2 : Day() {
+class Day2 : Day<Int>() {
 
     enum class Item(private val beats: Int) {
         ROCK(2),
@@ -46,7 +46,7 @@ class Day2 : Day() {
     override val day: Int
         get() = 2
 
-    fun getTotalScorePartOne(): Int {
+    override fun partOne(): Int {
         return input.lines().sumOf {
             val strategyGuide = it.split(" ")
             val opponentsMove = getOpponentsMove(strategyGuide.first())
@@ -56,7 +56,7 @@ class Day2 : Day() {
         }
     }
 
-    fun getTotalScorePartTwo(): Int {
+    override fun partTwo(): Int {
         return input.lines().sumOf {
             val strategyGuide = it.split(" ")
             val opponentsMove = getOpponentsMove(strategyGuide.first())
@@ -108,11 +108,4 @@ class Day2 : Day() {
         }
     }
 
-}
-
-fun main() {
-    val totalScorePart1 = Day2().getTotalScorePartOne()
-    println(totalScorePart1)
-    val totalScorePart2 = Day2().getTotalScorePartTwo()
-    println(totalScorePart2)
 }

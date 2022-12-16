@@ -1,16 +1,16 @@
 package de.mowee
 
-class Day3 : Day() {
+class Day3 : Day<Int>() {
     override val day: Int
         get() = 3
 
-    fun getSumPart1(): Int {
+    override fun partOne(): Int {
         return input.lines().flatMap {
             getMatchingChars(listOf(it.dropLast(it.length / 2), it.drop(it.length / 2)))
         }.sumOf { getPriority(it) }
     }
 
-    fun getSumPart2(): Int {
+    override fun partTwo(): Int {
         return input.lines().windowed(3, 3).flatMap { getMatchingChars(it) }.sumOf { getPriority(it) }
     }
 
@@ -28,11 +28,4 @@ class Day3 : Day() {
         else -> throw IllegalStateException("Unexpected character $char")
     }
 
-}
-
-fun main() {
-    val sum1 = Day3().getSumPart1()
-    println(sum1)
-    val sum2 = Day3().getSumPart2()
-    println(sum2)
 }

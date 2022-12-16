@@ -1,14 +1,14 @@
 package de.mowee
 
-class Day4 : Day() {
+class Day4 : Day<Int>() {
     override val day: Int
         get() = 4
 
-    fun countPairsWhereOneRangeFullyContainsTheOther(): Int {
+    override fun partOne(): Int {
         return countPairsWithinRangesWhere { previous, current -> doesOneRangeFullyContainsTheOther(previous, current) }
     }
 
-    fun countPairsWhereTheRangesOverlap(): Int {
+    override fun partTwo(): Int {
         return countPairsWithinRangesWhere { previous, current -> doTheRangesOverlap(previous, current) }
     }
 
@@ -41,11 +41,4 @@ class Day4 : Day() {
         return (previous.contains(current.first) || previous.contains(current.last)) ||
                 (current.contains(previous.first) || current.contains(previous.last))
     }
-}
-
-fun main() {
-    val countPart1 = Day4().countPairsWhereOneRangeFullyContainsTheOther()
-    println(countPart1)
-    val countPart2 = Day4().countPairsWhereTheRangesOverlap()
-    println(countPart2)
 }

@@ -17,7 +17,7 @@ class Day1Test {
     @Test
     fun `returns the elf carrying the most calories`() {
         // when
-        val calories = Day1().getMostCalories()
+        val calories = Day1().partOne()
 
         // then
         assertThat(calories).isEqualTo(24000)
@@ -26,7 +26,7 @@ class Day1Test {
     @Test
     fun `get top three elfs carying the most calories`() {
         // when
-        val calories  = Day1().getTopThreeCalories()
+        val calories = Day1().partTwo()
 
         // then
         assertThat(calories).isEqualTo(45000)

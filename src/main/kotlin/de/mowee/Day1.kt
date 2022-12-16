@@ -1,6 +1,6 @@
 package de.mowee
 
-class Day1 : Day() {
+class Day1 : Day<Int>() {
 
     override val day = 1
 
@@ -10,11 +10,11 @@ class Day1 : Day() {
         }
     }
 
-    fun getMostCalories(): Int {
+    override fun partOne(): Int {
         return getTotals().max()
     }
 
-    fun getTopThreeCalories(): Int {
+    override fun partTwo(): Int {
         val top = 3
         var sum = 0
 
@@ -28,12 +28,4 @@ class Day1 : Day() {
         return sum
     }
 
-}
-
-fun main() {
-    val mostCalories = Day1().getMostCalories()
-    println(mostCalories)
-
-    val topThreeCalories = Day1().getTopThreeCalories()
-    println(topThreeCalories)
 }
